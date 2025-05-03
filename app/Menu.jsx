@@ -1,4 +1,4 @@
-import {StyleSheet, Appearance, Platform, SafeAreaView, FlatList,
+import {StyleSheet, Appearance, Platform, ScrollView, SafeAreaView, FlatList,
 View, Text, Image
 } from 'react-native';
 import { Colors } from '@/constants/Colors';
@@ -7,9 +7,9 @@ import MenuImages from '@/constants/MenuImages';
 
 const Menu = () => {
     const colorScheme = Appearance.getColorScheme()
-    const theme = colorScheme === 'dark' ? Color.dark : Colors.light;
+    const theme = colorScheme === 'dark' ? Colors.dark : Colors.light;
     const styles = createStyle(theme, colorScheme)
-    const Container = Platform.OS === 'web' ? scrollView : SafeAreaView;
+    const Container = Platform.OS === 'web' ? ScrollView : SafeAreaView;
   return (
     <Container>
         <FlatList 
